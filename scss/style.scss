@@ -1,0 +1,141 @@
+@use './components' as *;
+
+//utitlites
+$bg: #111;
+$accent: #fca111;
+
+@keyframes vibe {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+.vibe {
+  animation: vibe 800ms ease infinite;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: $bg;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+main {
+  display: flex;
+  flex-direction: column-reverse;
+  @media (min-width: 766px) {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 10px 1000fr 10px;
+  }
+  @media (min-width: 1000px) {
+    padding: 0 10rem;
+  }
+}
+.volumeContainer {
+  align-self: center;
+  @media (min-width: 766px) {
+    display: grid;
+    place-self: center;
+  }
+  .volume {
+    width: 100%;
+    @media (min-width: 766px) {
+      width: 30vh;
+      grid-template-columns: 10px 1000fr;
+      position: relative;
+      transform-origin: bottom;
+      left: 19px;
+      transform: rotate(-90deg);
+    }
+  }
+}
+.musicPlayerContainer {
+  width: 100%;
+  .musicPlayer {
+    padding: 2rem 10vw;
+    .musicDetails {
+      .cover {
+        margin: 0 auto;
+        transition: all ease 300ms;
+        background: url("./Img/Sanity.png") center center/cover no-repeat;
+        height: 200px;
+        width: 200px;
+        border-radius: 10%;
+        @media (min-width: 768px) {
+          height: 400px;
+          width: 400px;
+        }
+      }
+      .title {
+        text-align: center;
+        color: $accent;
+        font-style: italic;
+        font-weight: 900;
+      }
+    }
+    .IDK {
+      display: grid;
+      grid-template-columns: 1fr 1000fr 1fr;
+      align-items: center;
+      column-gap: 0.4rem;
+      .musicCurrentTimer {
+        font-size: 0.9rem;
+      }
+      .musicEndTimer {
+        @extend .musicCurrentTimer;
+      }
+      .progressBarContainer {
+        background-color: #777;
+        border-radius: 1rem;
+        height: 10px;
+        width: 100%;
+        .progressBar {
+          @extend .progressBarContainer;
+          background-color: $accent;
+          width: 0%;
+        }
+      }
+    }
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1rem;
+      div {
+        padding: 1rem;
+        cursor: pointer;
+        @media (max-width: 768px) {
+          padding: 0.5rem;
+        }
+        &:active {
+          transform: scale(1.2);
+        }
+        svg {
+          fill: $accent;
+          width: 30px;
+          height: 30px;
+          @media (max-width: 768px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      .forward {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+      .playStopLoopCombo {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        &:active {
+          transform: none;
+        }
+      }
+    }
+  }
+}

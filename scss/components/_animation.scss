@@ -1,0 +1,8 @@
+@keyframes left-pop{
+	from{
+		transform:  translate(-1000px);
+	}
+}
+.animation-left-pop{
+	animation: left-pop 900ms ease-in-out forwards;
+}

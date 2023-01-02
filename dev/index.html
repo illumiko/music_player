@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>/|MusicPlayter|/</title>
+    <link rel="stylesheet" href="./main-style.css" />
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="volumeContainer">
+        <input type="range" min="0" max="10" value="0.5" class="volume" />
+      </div>
+      <div class="musicPlayerContainer">
+        <!--music player-->
+        <div class="musicPlayer">
+          <!--music name and title-->
+          <div class="musicDetails">
+            <div class="cover"></div>
+            <h2 class="title">Sanity</h2>
+          </div>
+
+          <!--music status ie: start timer, end timer, progressbar-->
+          <div class="IDK">
+            <!--start timer-->
+            <div class="musicCurrentTimer">0:00</div>
+            <!--progress bar-->
+            <div class="progressBarContainer">
+              <div class="progressBar"></div>
+            </div>
+            <!--end timer-->
+            <div class="musicEndTimer"></div>
+          </div>
+
+          <!--music controller-->
+          <div class="controls">
+            <!--next btn-->
+            <div class="prev">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 2v20h-2v-20h2zm18 0l-16 10 16 10v-20z" />
+              </svg>
+            </div>
+
+            <!--backward 5s btn-->
+            <div class="backward">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 12l12-7v14l-12-7zm-12 0l12-7v14l-12-7z" />
+              </svg>
+            </div>
+
+            <div class="playStopLoopCombo">
+
+            <!--loop btn-->
+              <div class="loop">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2 12c0 .999.381 1.902.989 2.604l-1.098.732-.587.392c-.814-1.025-1.304-2.318-1.304-3.728 0-3.313 2.687-6 6-6h9v-3l6 4-6 4v-3h-9c-2.206 0-4 1.794-4 4zm20.696-3.728l-.587.392-1.098.732c.608.702.989 1.605.989 2.604 0 2.206-1.795 4-4 4h-9v-3l-6 4 6 4v-3h9c3.313 0 6-2.687 6-6 0-1.41-.489-2.703-1.304-3.728z"
+                  />
+                </svg>
+              </div>
+
+              <!--play/pause btn-->
+              <div class="pause">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M2 24v-24l20 12-20 12z" />
+                </svg>
+              </div>
+            </div>
+
+            <!--forward 5s btn-->
+            <div class="forward">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 12l12-7v14l-12-7zm-12 0l12-7v14l-12-7z" />
+              </svg>
+            </div>
+
+            <!--next btn-->
+            <div class="next">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M20 22v-20h2v20h-2zm-18 0l16-10-16-10v20z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--for music playing-->
+      <audio class="audio" src="./Music/Sanity.mp3"></audio>
+    </main>
+  </body>
+</html>
